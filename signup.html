@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - STACKLY</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* FIX RIGHT SIDE SCROLLING */
+        .login-right {
+            overflow-y: auto !important;
+            height: 100vh !important;
+            display: flex;
+            align-items: flex-start; /* Instead of center, so it scrolls properly from the top */
+            padding-top: 60px !important;
+            padding-bottom: 60px !important;
+        }
+        
+        /* Make sure the form container has room to breathe */
+        .login-form-container {
+            margin: auto;
+            width: 100%;
+            max-width: 450px;
+        }
+        
+        /* THEME STYLING FOR LABELS & INPUTS */
+        .theme-label {
+            font-weight: 600 !important;
+            color: var(--secondary) !important;
+            font-size: 0.95rem !important;
+            margin-bottom: 8px !important;
+            display: block;
+        }
+        
+        .signup-form .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .signup-form .form-input {
+            width: 100%;
+            padding: 14px 20px;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-color);
+            background-color: var(--bg-color); /* Light grey background */
+            font-family: inherit;
+            font-size: 1rem;
+            color: var(--text-main);
+            transition: var(--transition);
+        }
+        
+        .signup-form .form-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(79, 56, 223, 0.1);
+            background-color: var(--white);
+        }
+        
+        .password-toggle {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            cursor: pointer;
+        }
+        
+        /* Mobile fixes */
+        @media (max-width: 768px) {
+            .login-right {
+                padding-top: 40px !important;
+            }
+        }
+    </style>
+
+
+    <style>
+        .login-right { padding: 40px !important; }
+        .login-form-container { max-width: 450px !important; }
+        .type-toggle { margin-bottom: 20px !important; padding: 5px !important; }
+        .type-btn { padding: 10px !important; }
+        @media (max-width: 768px) {
+            .login-right { padding: 20px !important; justify-content: flex-start !important; overflow-y: auto; }
+            .login-form-container { margin-top: 20px; }
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="login-split">
+        <!-- Left Panel -->
+        <div class="login-left">
+            <div class="left-content">
+                <a href="index.html" class="logo">
+                <img src="assets/logo.webp" alt="STACKLY Logo" style="height: 40px; width: auto;">
+            </a>
+                
+                <h1>Create an Account to <span>Stackly</span></h1>
+                <p>Create an account to discover top jobs or find elite talent, view job applications, and collaborate with our premium recruiters.</p>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-text">"Finding our next lead developer was seamless thanks to the Stackly platform."</p>
+                <p class="testimonial-author">- Sarah J., TechVentures</p>
+            </div>
+        </div>
+
+        <!-- Right Panel -->
+        <div class="login-right">
+            <div class="right-content">
+                <a href="index.html" class="back-to-home">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                    Back to Home
+                </a>
+
+                <h2>Create Account</h2>
+                <p>Sign up to get started</p>
+
+                <div class="account-type-toggle">
+                    <button class="type-btn active" type="button" data-role="user">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        User
+                    </button>
+                    <button class="type-btn" type="button" data-role="employer">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 22S8 18 8 12V5L12 2L16 5V12C16 18 12 22 12 22Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        Employer
+                    </button>
+                </div>
+
+                <form id="signupForm" class="signup-form">
+                    <div class="form-group">
+                        <label class="form-label theme-label">Full Name</label>
+                        <div class="input-wrapper">
+                            <input type="text" class="form-input" placeholder="Full Name" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label theme-label">Email Address</label>
+                        <div class="input-wrapper">
+                            <input type="email" class="form-input" placeholder="Email Address" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label theme-label">Password</label>
+                        <div class="input-wrapper">
+                            <input type="password" class="form-input" placeholder="Password (Min. 6 characters)" required>
+                            <svg class="password-toggle" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label theme-label">Confirm Password</label>
+                        <div class="input-wrapper">
+                            <input type="password" class="form-input" placeholder="Confirm Password" required>
+                            <svg class="password-toggle" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="remember-forgot" style="margin-top: 15px; margin-bottom: 25px;">
+                        <label class="checkbox-wrapper" style="display: flex; align-items: flex-start; gap: 10px;">
+                            <input type="checkbox" required style="margin-top: 4px; accent-color: var(--primary); width: 16px; height: 16px;">
+                            <span class="text-muted" style="font-size: 0.9rem; line-height: 1.4;">I agree to the <a href="#" class="text-primary" style="font-weight: 600; text-decoration: none;">Terms & Conditions</a> and <a href="#" class="text-primary" style="font-weight: 600; text-decoration: none;">Privacy Policy</a></span>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary login-btn" style="width: 100%;">Create Account</button>
+                    
+                    <div class="form-footer" style="text-align: center; margin-top: 30px;">
+                        <p class="text-muted">Already have an account? <a href="login.html" class="signup-link" style="color: var(--primary); font-weight: 600; text-decoration: none;">Login</a></p>
+                    </div>
+                </form>
+
+                <div class="signup-link">
+                    Already have an account? <a href="login.html">Login</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Toggle account type active state
+        const typeBtns = document.querySelectorAll('.type-btn');
+        let selectedRole = 'user'; // default
+
+        typeBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                typeBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                selectedRole = btn.getAttribute('data-role');
+            });
+        });
+
+        // Form submission mockup
+        document.getElementById('loginForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = e.target.querySelector('.btn-login');
+            const originalText = btn.innerText;
+            btn.innerText = 'Logging in...';
+            btn.disabled = true;
+            
+            setTimeout(() => {
+                btn.innerText = 'Success!';
+                setTimeout(() => {
+                    if (selectedRole === 'user') {
+                        window.location.href = 'userdashboard.html';
+                    } else if (selectedRole === 'employer') {
+                        window.location.href = 'admindashboard.html';
+                    } else {
+                        window.location.href = 'index.html';
+                    }
+                }, 1000);
+            }, 1500);
+        });
+    </script>
+</body>
+</html>

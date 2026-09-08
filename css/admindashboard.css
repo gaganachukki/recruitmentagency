@@ -1,0 +1,29 @@
+@import url('userdashboard.css');
+
+/* Admin Specific Overrides if needed */
+.admin-header-actions .btn {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background 0.3s;
+}
+.admin-header-actions .btn:hover { background: var(--primary-hover); }
+
+.date-picker {
+  background: var(--bg-color);
+  border: 1px solid var(--border-color);
+  padding: 10px 16px;
+  border-radius: 8px;
+  color: var(--text-main);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}

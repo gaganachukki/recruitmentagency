@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STACKLY - Recruitment Agency Portal</title>
+    <meta name="description" content="Connecting talented professionals with companies where they can grow, contribute, and succeed.">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/logo.webp" alt="STACKLY Logo" style="height: 40px; width: auto;">
+            </a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="jobs.html" class="nav-link">Jobs</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="blog.html" class="nav-link">Blog</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-actions">
+                <a href="login.html" class="btn btn-outline">Login</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero section">
+        <div class="container grid grid-cols-2 items-center gap-8">
+            <div class="hero-content animate-on-scroll">
+                <span class="badge">Your Partner in Building Exceptional Teams</span>
+                <h1>Right People.<br>Right <span class="text-primary">Opportunities.</span></h1>
+                <p>Connecting talented professionals with companies where they can grow, contribute, and succeed. We make recruitment simple, fast, and effective.</p>
+                <div class="hero-btns flex gap-2">
+                    <a href="jobs.html" class="btn btn-primary">Find a Job &rarr;</a>
+                    <a href="contact.html" class="btn btn-outline">Find Talent &rarr;</a>
+                </div>
+            </div>
+            
+            <div class="hero-image-wrapper animate-on-scroll">
+                <div class="image-container">
+                    <img src="assets/hero.webp" alt="Recruiters interviewing candidates" class="rounded-image">
+                    
+                    <!-- Floating Stat 1 -->
+                    <div class="floating-stat stat-1 shadow-md">
+                        <div class="stat-icon bg-accent">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                        </div>
+                        <div>
+                            <h4>12K+</h4>
+                            <p>Candidates Placed</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Floating Stat 2 -->
+                    <div class="floating-stat stat-2 shadow-md">
+                        <div>
+                            <h4>98%</h4>
+                            <p>Placement Success</p>
+                        </div>
+                        <div class="stat-trend text-success">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline><polyline points="16 7 22 7 22 13"></polyline></svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Preview -->
+    <section class="about-preview section bg-white">
+        <div class="container grid grid-cols-2 items-center gap-8">
+            <div class="about-image animate-on-scroll">
+                <img src="assets/about.webp" alt="Corporate team meeting" class="rounded-image shadow-hover">
+            </div>
+            <div class="about-content animate-on-scroll">
+                <span class="badge">About Recruitment</span>
+                <h2>Building Careers. Building Teams.</h2>
+                <p>STACKLY is a premier recruitment agency dedicated to connecting employers with qualified candidates. We understand that every business is unique, and so is every career path.</p>
+                <p>With years of industry expertise and a massive talent network, we bridge the gap between ambition and opportunity, ensuring the perfect match every time.</p>
+                
+                <div class="about-stats flex gap-4 mt-4">
+                    <div class="counter-box animate-on-scroll">
+                        <h3 class="text-primary counter-val" data-target="15" data-suffix="+">0</h3>
+                        <p>Years Experience</p>
+                    </div>
+                    <div class="counter-box animate-on-scroll">
+                        <h3 class="text-primary counter-val" data-target="50" data-suffix="+">0</h3>
+                        <p>Industry Awards</p>
+                    </div>
+                </div>
+                
+                <a href="about.html" class="btn btn-primary mt-4">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Preview -->
+    <section class="services-preview section">
+        <div class="container">
+            <div class="section-header text-center animate-on-scroll">
+                <span class="badge">What We Do</span>
+                <h2>Our Recruitment Services</h2>
+                <p>End-to-end recruitment solutions designed to help you hire better and grow faster.</p>
+            </div>
+            
+            <div class="grid grid-cols-3 gap-3 mt-6">
+                <!-- Service 1 -->
+                <div class="service-card card shadow-sm animate-on-scroll">
+                    <div class="icon-wrapper">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                    </div>
+                    <h3>Permanent Staffing</h3>
+                    <p>We help you find the right permanent employees who fit your culture and drive long-term success.</p>
+                    <a href="services.html" class="service-link">Learn more &rarr;</a>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-card card shadow-sm animate-on-scroll" style="transition-delay: 0.1s">
+                    <div class="icon-wrapper">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                    </div>
+                    <h3>Temporary Staffing</h3>
+                    <p>Flexible staffing solutions to meet your short-term, seasonal, or project-based hiring needs.</p>
+                    <a href="services.html" class="service-link">Learn more &rarr;</a>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-card card shadow-sm animate-on-scroll" style="transition-delay: 0.2s">
+                    <div class="icon-wrapper">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                    </div>
+                    <h3>Executive Search</h3>
+                    <p>We identify and attract top-level executives who bring leadership, innovation, and impact.</p>
+                    <a href="services.html" class="service-link">Learn more &rarr;</a>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="service-card card shadow-sm animate-on-scroll">
+                    <div class="icon-wrapper">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                    </div>
+                    <h3>Contract Staffing</h3>
+                    <p>Skilled professionals available on a contract basis for specialized projects and skill gaps.</p>
+                    <a href="services.html" class="service-link">Learn more &rarr;</a>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="service-card card shadow-sm animate-on-scroll" style="transition-delay: 0.1s">
+                    <div class="icon-wrapper">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                    </div>
+                    <h3>RPO Solutions</h3>
+                    <p>Outsource your recruitment process to our experts and streamline hiring with our RPO services.</p>
+                    <a href="services.html" class="service-link">Learn more &rarr;</a>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="service-card card shadow-sm animate-on-scroll" style="transition-delay: 0.2s">
+                    <div class="icon-wrapper">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                    </div>
+                    <h3>Talent Consulting</h3>
+                    <p>Workforce planning, talent strategy, and recruitment consulting to optimize your HR operations.</p>
+                    <a href="services.html" class="service-link">Learn more &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="features section bg-white">
+        <div class="container grid grid-cols-2 items-center gap-8">
+            <div class="features-content animate-on-scroll">
+                <span class="badge">Why Choose STACKLY</span>
+                <h2>Your Competitive Advantage in Hiring</h2>
+                <div class="feature-list mt-4">
+                    <div class="feature-item flex gap-2">
+                        <div class="check-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--success)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+                        <div>
+                            <h4>Verified Talent</h4>
+                            <p>Connect with qualified and strictly screened candidates.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item flex gap-2 mt-2">
+                        <div class="check-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--success)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+                        <div>
+                            <h4>Faster Hiring</h4>
+                            <p>Reduce hiring time with our efficient recruitment process.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item flex gap-2 mt-2">
+                        <div class="check-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--success)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+                        <div>
+                            <h4>Smart Matching</h4>
+                            <p>Match candidates with roles based on skills, culture, and requirements.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="features-image animate-on-scroll">
+                <img src="assets/recruitment-team.webp" alt="Recruitment team" class="rounded-image shadow-lg">
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="process section">
+        <div class="container">
+            <div class="section-header text-center animate-on-scroll">
+                <span class="badge">How It Works</span>
+                <h2>A Simple 3-Step Process</h2>
+            </div>
+            
+            <div class="grid grid-cols-3 gap-4 mt-6 text-center relative">
+                <div class="process-line"></div>
+                <div class="process-step animate-on-scroll">
+                    <div class="step-number bg-primary text-white">01</div>
+                    <h3>Discover</h3>
+                    <p>We deeply understand employer requirements and candidate career goals.</p>
+                </div>
+                <div class="process-step animate-on-scroll" style="transition-delay: 0.1s">
+                    <div class="step-number bg-primary text-white">02</div>
+                    <h3>Match</h3>
+                    <p>We identify and match suitable candidates with the best opportunities.</p>
+                </div>
+                <div class="process-step animate-on-scroll" style="transition-delay: 0.2s">
+                    <div class="step-number bg-primary text-white">03</div>
+                    <h3>Connect</h3>
+                    <p>We facilitate interviews, selection, and a successful final placement.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Jobs -->
+    <section class="jobs-preview section bg-white">
+        <div class="container">
+            <div class="section-header flex justify-between items-center animate-on-scroll">
+                <div>
+                    <span class="badge">Featured Opportunities</span>
+                    <h2>Latest Job Openings</h2>
+                </div>
+                <a href="jobs.html" class="btn btn-outline">View All Jobs</a>
+            </div>
+            
+            <div class="grid grid-cols-2 gap-3 mt-6">
+                <!-- Job Card 1 -->
+                <div class="job-card card shadow-sm flex-col justify-between animate-on-scroll">
+                    <div class="flex justify-between">
+                        <div>
+                            <h4>Senior Software Engineer</h4>
+                            <p class="company-name">TechFlow Innovations</p>
+                        </div>
+                        <div class="job-icon bg-accent"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg></div>
+                    </div>
+                    <div class="job-meta flex gap-2 mt-3 text-muted">
+                        <span class="flex items-center gap-1"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> San Francisco, CA</span>
+                        <span class="flex items-center gap-1"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg> Full Time</span>
+                        <span class="flex items-center gap-1"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg> $130K - $160K</span>
+                    </div>
+                    <a href="login.html" class="btn btn-primary mt-4" style="width: 100%;">Apply Now</a>
+                </div>
+                
+                <!-- Job Card 2 -->
+                <div class="job-card card shadow-sm flex-col justify-between animate-on-scroll" style="transition-delay: 0.1s">
+                    <div class="flex justify-between">
+                        <div>
+                            <h4>Product Designer (UI/UX)</h4>
+                            <p class="company-name">Nexus Global</p>
+                        </div>
+                        <div class="job-icon bg-accent"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg></div>
+                    </div>
+                    <div class="job-meta flex gap-2 mt-3 text-muted">
+                        <span class="flex items-center gap-1"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> Remote</span>
+                        <span class="flex items-center gap-1"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg> Full Time</span>
+                        <span class="flex items-center gap-1"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg> $90K - $115K</span>
+                    </div>
+                    <a href="login.html" class="btn btn-primary mt-4" style="width: 100%;">Apply Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Candidate Success Stats -->
+    <section class="stats section bg-primary text-white">
+        <div class="container grid grid-cols-4 gap-4 text-center">
+            <div class="stat-box counter-box animate-on-scroll">
+                <h2 class="text-white"><span class="counter-val" data-target="12" data-suffix="K+">0</span></h2>
+                <p class="text-accent">Candidates Placed</p>
+            </div>
+            <div class="stat-box counter-box animate-on-scroll" style="transition-delay: 0.1s">
+                <h2 class="text-white"><span class="counter-val" data-target="2.5" data-suffix="K+">0</span></h2>
+                <p class="text-accent">Companies Served</p>
+            </div>
+            <div class="stat-box counter-box animate-on-scroll" style="transition-delay: 0.2s">
+                <h2 class="text-white"><span class="counter-val" data-target="98" data-suffix="%">0</span></h2>
+                <p class="text-accent">Placement Success</p>
+            </div>
+            <div class="stat-box counter-box animate-on-scroll" style="transition-delay: 0.3s">
+                <h2 class="text-white"><span class="counter-val" data-target="4.8" data-suffix="/5">0</span></h2>
+                <p class="text-accent">Client Satisfaction</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Preview -->
+    <section class="blog-preview section bg-white">
+        <div class="container">
+            <div class="section-header text-center animate-on-scroll">
+                <span class="badge">From Our Blog</span>
+                <h2>Latest Insights</h2>
+            </div>
+            
+            <div class="grid grid-cols-3 gap-3 mt-6">
+                <!-- Blog 1 -->
+                <div class="blog-card animate-on-scroll">
+                    <div class="blog-img">
+                        <img src="assets/hiring.webp" alt="5 Strategies to Attract Top Talent" class="rounded-image">
+                        <span class="blog-tag bg-white text-primary">Hiring Tips</span>
+                    </div>
+                    <div class="blog-content mt-3">
+                        <h4>5 Strategies to Attract Top Talent in 2026</h4>
+                        <p>Learn how to position your company to attract the best candidates in a competitive market.</p>
+                        <a href="blog.html" class="read-more text-primary mt-2 flex items-center gap-1">Read More <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+                    </div>
+                </div>
+                
+                <!-- Blog 2 -->
+                <div class="blog-card animate-on-scroll" style="transition-delay: 0.1s">
+                    <div class="blog-img">
+                        <img src="assets/candidate.webp" alt="AI in Recruitment" class="rounded-image">
+                        <span class="blog-tag bg-white text-primary">Recruitment</span>
+                    </div>
+                    <div class="blog-content mt-3">
+                        <h4>How AI Is Transforming the Recruitment Process</h4>
+                        <p>Discover how artificial intelligence is making hiring faster, fairer, and more accurate.</p>
+                        <a href="blog.html" class="read-more text-primary mt-2 flex items-center gap-1">Read More <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+                    </div>
+                </div>
+                
+                <!-- Blog 3 -->
+                <div class="blog-card animate-on-scroll" style="transition-delay: 0.2s">
+                    <div class="blog-img">
+                        <img src="assets/career.webp" alt="Top Skills to Advance" class="rounded-image">
+                        <span class="blog-tag bg-white text-primary">Career Advice</span>
+                    </div>
+                    <div class="blog-content mt-3">
+                        <h4>Top Skills You Need to Advance Your Career</h4>
+                        <p>A guide to the most in-demand soft and hard skills that employers are looking for.</p>
+                        <a href="blog.html" class="read-more text-primary mt-2 flex items-center gap-1">Read More <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section section text-center animate-on-scroll">
+        <div class="container">
+            <div class="cta-box card shadow-md bg-accent" style="max-width: 800px; margin: 0 auto; padding: 60px 40px; border-radius: var(--radius-lg);">
+                <h2>Ready to Find the Right Opportunity?</h2>
+                <p class="mt-2 text-text-main">Whether you're looking for your next career move or building your next great team, STACKLY is here to help.</p>
+                <div class="flex justify-center gap-2 mt-4">
+                    <a href="jobs.html" class="btn btn-primary">Find Jobs</a>
+                    <a href="contact.html" class="btn btn-outline bg-white">Hire Talent</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- Footer -->
+    <footer class="footer bg-secondary text-white pt-8 pb-4">
+        <div class="container">
+            <div class="footer-grid mb-8">
+                <!-- Column 1 -->
+                <div class="footer-col">
+                    <a href="index.html" class="logo text-white" style="color: var(--white) !important;">
+                        <img src="assets/logo.webp" alt="STACKLY Logo" style="height: 40px; width: auto;">
+                    </a>
+                    <p class="mt-3 footer-desc">A premium partner for global talent acquisition and staffing solutions. Build exceptional teams with unparalleled ease.</p>
+                    <div class="social-links flex gap-2 mt-4">
+                        <a href="#" class="social-icon" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+                        <a href="#" class="social-icon" aria-label="X"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l16 16m0-16L4 20"></path></svg></a>
+                        <a href="#" class="social-icon" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+                        <a href="#" class="social-icon" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+                    </div>
+                </div>
+                
+                <!-- Column 2 -->
+                <div class="footer-col">
+                    <h4 class="text-white mb-3">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="jobs.html">Doctors</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 3 -->
+                <div class="footer-col">
+                    <h4 class="text-white mb-3">Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 4 -->
+                <div class="footer-col">
+                    <h4 class="text-white mb-3">Contact</h4>
+                    <ul class="footer-contact-info">
+                        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg> support@stacklyhealth.com</li>
+                        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg> +1 98765 43210</li>
+                        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> New York, NY 10001</li>
+                    </ul>
+                </div>
+
+                <!-- Column 5 -->
+                <div class="footer-col">
+                    <h4 class="text-white mb-3">Newsletter</h4>
+                    <p class="footer-desc mb-3">Subscribe to receive the latest healthcare updates, exclusive offers, and health news.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email address" class="newsletter-input" required>
+                        <button type="submit" class="btn btn-success">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom text-center pt-4" style="border-top: 1px solid rgba(255,255,255,0.1); position: relative;">
+                <p class="footer-desc">&copy; 2026 STACKLY Health. All rights reserved.</p>
+                <a href="#" class="scroll-top-btn" aria-label="Scroll to top" onclick="window.scrollTo(0,0); return false;">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

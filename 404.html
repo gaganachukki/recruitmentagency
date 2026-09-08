@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Not Found - STACKLY</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .error-page { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; background: var(--bg-color); padding: 20px; text-align: center; }
+        .error-code { font-size: 8rem; font-weight: 800; color: var(--primary); line-height: 1; margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+    <div class="error-page animate-on-scroll">
+        <div class="error-code">404</div>
+        <h2>Page not Found</h2>
+        <p class="text-muted mt-2 mb-6" style="max-width: 400px;">The page you're looking for doesn't exist or may have been moved.</p>
+        <div class="flex justify-center gap-2">
+            <button onclick="window.history.back()" class="btn btn-outline">Back</button>
+            <a href="index.html" class="btn btn-primary">Back to Home</a>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
