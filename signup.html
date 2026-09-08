@@ -5,86 +5,226 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up - STACKLY</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
     <style>
-        /* FIX RIGHT SIDE SCROLLING */
-        .login-right {
-            overflow-y: auto !important;
-            height: 100vh !important;
+
+        :root {
+            --primary: #4F38DF;
+            --primary-hover: #5B44EB;
+            --secondary: #110B3A;
+            --bg-light: #FAFAFB;
+            --bg-white: #FFFFFF;
+            --text-dark: #1A1A1A;
+            --text-muted: #646464;
+            --border: #EAEAEA;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+        }
+
+        .login-split {
             display: flex;
-            align-items: flex-start; /* Instead of center, so it scrolls properly from the top */
-            padding-top: 60px !important;
-            padding-bottom: 60px !important;
-        }
-        
-        /* Make sure the form container has room to breathe */
-        .login-form-container {
-            margin: auto;
             width: 100%;
-            max-width: 450px;
+            height: 100vh;
+            overflow: hidden;
         }
-        
-        /* THEME STYLING FOR LABELS & INPUTS */
-        .theme-label {
-            font-weight: 600 !important;
-            color: var(--secondary) !important;
-            font-size: 0.95rem !important;
-            margin-bottom: 8px !important;
-            display: block;
+
+        /* Left Panel */
+        .login-left {
+            flex: 1;
+            background: linear-gradient(to bottom, rgba(17, 11, 58, 0.8), rgba(79, 56, 223, 0.85)), url('assets/hero.webp') center/cover no-repeat;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            color: #ffffff;
         }
-        
-        .signup-form .form-group {
+
+        .left-content { position: relative; z-index: 1; max-width: 500px; }
+
+        .logo { margin-bottom: 40px; display: inline-block; }
+
+        .left-content h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+
+        .left-content h1 span { color: #E2DEFF; }
+
+        .left-content p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.9);
             margin-bottom: 20px;
         }
-        
-        .signup-form .form-input {
-            width: 100%;
-            padding: 14px 20px;
-            border-radius: var(--radius-md);
-            border: 1px solid var(--border-color);
-            background-color: var(--bg-color); /* Light grey background */
-            font-family: inherit;
-            font-size: 1rem;
-            color: var(--text-main);
-            transition: var(--transition);
+
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 16px;
+            padding: 30px;
+            position: relative;
+            z-index: 1;
+            max-width: 500px;
         }
-        
-        .signup-form .form-input:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 4px rgba(79, 56, 223, 0.1);
-            background-color: var(--white);
+
+        .stars { color: #fbbf24; font-size: 1.2rem; margin-bottom: 15px; }
+
+        .testimonial-text {
+            font-style: italic;
+            font-size: 1.05rem;
+            line-height: 1.5;
+            margin-bottom: 15px;
+            color: #ffffff;
         }
-        
-        .password-toggle {
+
+        .testimonial-author {
+            color: #E2DEFF;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* Right Panel */
+        .login-right {
+            flex: 1;
+            background-color: var(--bg-white);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .back-to-home {
             position: absolute;
-            right: 15px;
-            top: 50%;
-            transform: translateY(-50%);
+            top: 40px; right: 40px;
             color: var(--text-muted);
-            cursor: pointer;
+            text-decoration: none;
+            display: flex; align-items: center; gap: 8px;
+            font-size: 0.9rem; font-weight: 500;
+            transition: color 0.3s;
         }
-        
-        /* Mobile fixes */
-        @media (max-width: 768px) {
-            .login-right {
-                padding-top: 40px !important;
-            }
+
+        .back-to-home:hover { color: var(--primary); }
+
+        .right-content {
+            margin: auto; width: 100%; max-width: 480px; padding: 40px;
         }
-    </style>
 
-
-    <style>
-        .login-right { padding: 40px !important; }
-        .login-form-container { max-width: 450px !important; }
-        .type-toggle { margin-bottom: 20px !important; padding: 5px !important; }
-        .type-btn { padding: 10px !important; }
-        @media (max-width: 768px) {
-            .login-right { padding: 20px !important; justify-content: flex-start !important; overflow-y: auto; }
-            .login-form-container { margin-top: 20px; }
+        .right-content h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.2rem; font-weight: 700; text-align: center; margin-bottom: 10px;
+            color: var(--secondary);
         }
-    </style>
 
+        .right-content > p {
+            text-align: center; color: var(--text-muted); margin-bottom: 25px; font-size: 0.95rem;
+        }
+
+        .account-type-toggle { display: flex; gap: 15px; margin-bottom: 20px; }
+
+        .type-btn {
+            flex: 1; background: var(--bg-light); border: 1px solid var(--border);
+            border-radius: 12px; padding: 15px; color: var(--text-muted);
+            cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 12px;
+            transition: all 0.3s; font-family: 'Inter', sans-serif; font-weight: 600; font-size: 1rem;
+        }
+
+        .type-btn svg { stroke: var(--text-muted); width: 28px; height: 28px; transition: stroke 0.3s; }
+
+        .type-btn.active {
+            border-color: var(--primary); background: rgba(79, 56, 223, 0.05); color: var(--primary);
+        }
+        .type-btn.active svg { stroke: var(--primary); }
+        .type-btn:hover:not(.active) { border-color: var(--primary-hover); color: var(--primary-hover); }
+        .type-btn:hover:not(.active) svg { stroke: var(--primary-hover); }
+
+        .form-group { margin-bottom: 15px; }
+
+        .form-label-wrap { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+
+        .form-label { font-weight: 600; font-size: 0.9rem; color: var(--text-dark); }
+
+        .forgot-pass { color: var(--primary); text-decoration: none; font-size: 0.85rem; font-weight: 600; }
+
+        .input-wrapper { position: relative; }
+
+        .form-control {
+            width: 100%; background-color: var(--bg-light); border: 1px solid var(--border);
+            border-radius: 8px; padding: 12px 14px; color: var(--text-dark);
+            font-family: 'Inter', sans-serif; font-size: 1rem; transition: all 0.3s; outline: none;
+        }
+
+        .form-control::placeholder { color: #a0aec0; }
+
+        .form-control:focus { border-color: var(--primary); background-color: var(--bg-white); box-shadow: 0 0 0 3px rgba(79, 56, 223, 0.1); }
+
+        .eye-icon {
+            position: absolute; right: 16px; top: 50%; transform: translateY(-50%);
+            color: #a0aec0; cursor: pointer;
+        }
+
+        .remember-wrap {
+            display: flex; align-items: center; gap: 10px; margin-bottom: 20px; font-size: 0.9rem; font-weight: 500; color: var(--text-dark);
+        }
+
+        .remember-wrap input[type="checkbox"] {
+            appearance: none; width: 18px; height: 18px; border: 1px solid var(--border);
+            border-radius: 4px; background: var(--bg-light); cursor: pointer; position: relative;
+        }
+
+        .remember-wrap input[type="checkbox"]:checked { background: var(--primary); border-color: var(--primary); }
+
+        .remember-wrap input[type="checkbox"]:checked::after {
+            content: "&#10003;"; position: absolute; color: white; font-size: 12px; font-weight: bold;
+            top: 50%; left: 50%; transform: translate(-50%, -50%);
+        }
+
+        .btn-login {
+            width: 100%; background: var(--primary); color: white; border: none;
+            border-radius: 30px; padding: 14px; font-size: 1.05rem; font-weight: 600;
+            font-family: 'Inter', sans-serif; cursor: pointer; transition: background 0.3s, transform 0.3s;
+            box-shadow: 0 4px 15px rgba(79, 56, 223, 0.3);
+        }
+
+        .btn-login:hover { background: var(--primary-hover); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(79, 56, 223, 0.4); }
+
+        .signup-link { text-align: center; margin-top: 20px; font-size: 0.95rem; color: var(--text-muted); }
+
+        .signup-link a { color: var(--primary); text-decoration: none; font-weight: 600; }
+
+        @media (max-width: 992px) {
+            .login-split { flex-direction: column; height: auto; overflow: visible; }
+            .login-left { padding: 40px 20px; min-height: 50vh; }
+            .back-to-home { position: relative; top: auto; right: auto; display: inline-flex; margin-bottom: 20px; }
+            .right-content { padding: 30px 20px; }
+        }
+
+        /* Signup Specific Overrides to fit everything nicely */
+        .login-right {
+            overflow-y: auto !important;
+            justify-content: flex-start !important;
+            padding-top: 50px !important;
+            padding-bottom: 50px !important;
+        }
+        .right-content {
+            margin: auto !important;
+        }
+        .account-type-toggle {
+            margin-bottom: 15px !important;
+        }
+        .type-btn {
+            padding: 10px !important;
+        }
+</style>
 </head>
 <body>
 
@@ -96,7 +236,7 @@
                 <img src="assets/logo.webp" alt="STACKLY Logo" style="height: 40px; width: auto;">
             </a>
                 
-                <h1>Create an Account to <span>Stackly</span></h1>
+                <h1>Create Account to <span>Stackly</span></h1>
                 <p>Create an account to discover top jobs or find elite talent, view job applications, and collaborate with our premium recruiters.</p>
             </div>
             
@@ -116,7 +256,7 @@
                 </a>
 
                 <h2>Create Account</h2>
-                <p>Sign up to get started</p>
+                <p>Join our community of elite professionals</p>
 
                 <div class="account-type-toggle">
                     <button class="type-btn active" type="button" data-role="user">
@@ -130,58 +270,56 @@
                 </div>
 
                 <form id="signupForm" class="signup-form">
-                    <div class="form-group">
-                        <label class="form-label theme-label">Full Name</label>
+                    <div class="form-group" style="margin-bottom: 20px;">
+                        <label class="form-label" style="font-weight: 600; color: var(--secondary); margin-bottom: 8px; display: block;">Full Name</label>
                         <div class="input-wrapper">
-                            <input type="text" class="form-input" placeholder="Full Name" required>
+                            <input type="text" class="form-control" placeholder="Full Name" required>
                         </div>
                     </div>
                     
-                    <div class="form-group">
-                        <label class="form-label theme-label">Email Address</label>
+                    <div class="form-group" style="margin-bottom: 20px;">
+                        <label class="form-label" style="font-weight: 600; color: var(--secondary); margin-bottom: 8px; display: block;">Email Address</label>
                         <div class="input-wrapper">
-                            <input type="email" class="form-input" placeholder="Email Address" required>
+                            <input type="email" class="form-control" placeholder="Email Address" required>
                         </div>
                     </div>
 
-                    <div class="form-group">
-                        <label class="form-label theme-label">Password</label>
+                    <div class="form-group" style="margin-bottom: 20px;">
+                        <label class="form-label" style="font-weight: 600; color: var(--secondary); margin-bottom: 8px; display: block;">Password</label>
                         <div class="input-wrapper">
-                            <input type="password" class="form-input" placeholder="Password (Min. 6 characters)" required>
-                            <svg class="password-toggle" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <input type="password" class="form-control" placeholder="Password (Min. 6 characters)" required>
+                            <svg class="eye-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                                 <circle cx="12" cy="12" r="3"></circle>
                             </svg>
                         </div>
                     </div>
                     
-                    <div class="form-group">
-                        <label class="form-label theme-label">Confirm Password</label>
+                    <div class="form-group" style="margin-bottom: 20px;">
+                        <label class="form-label" style="font-weight: 600; color: var(--secondary); margin-bottom: 8px; display: block;">Confirm Password</label>
                         <div class="input-wrapper">
-                            <input type="password" class="form-input" placeholder="Confirm Password" required>
-                            <svg class="password-toggle" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <input type="password" class="form-control" placeholder="Confirm Password" required>
+                            <svg class="eye-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                                 <circle cx="12" cy="12" r="3"></circle>
                             </svg>
                         </div>
                     </div>
 
-                    <div class="remember-forgot" style="margin-top: 15px; margin-bottom: 25px;">
-                        <label class="checkbox-wrapper" style="display: flex; align-items: flex-start; gap: 10px;">
-                            <input type="checkbox" required style="margin-top: 4px; accent-color: var(--primary); width: 16px; height: 16px;">
-                            <span class="text-muted" style="font-size: 0.9rem; line-height: 1.4;">I agree to the <a href="#" class="text-primary" style="font-weight: 600; text-decoration: none;">Terms & Conditions</a> and <a href="#" class="text-primary" style="font-weight: 600; text-decoration: none;">Privacy Policy</a></span>
-                        </label>
+                    <div class="remember-wrap" style="margin-top: 15px; margin-bottom: 25px;">
+                        <input type="checkbox" required>
+                        <span style="font-size: 0.9rem;">I agree to the <a href="404.html" style="color: var(--primary); font-weight: 600; text-decoration: none;">Terms & Conditions</a></span>
                     </div>
 
-                    <button type="submit" class="btn btn-primary login-btn" style="width: 100%;">Create Account</button>
+                    <button type="submit" class="btn-login" style="margin-bottom: 15px;">Create Account</button>
                     
-                    <div class="form-footer" style="text-align: center; margin-top: 30px;">
-                        <p class="text-muted">Already have an account? <a href="login.html" class="signup-link" style="color: var(--primary); font-weight: 600; text-decoration: none;">Login</a></p>
+                    <div class="signup-link">
+                        Already have an account? <a href="login.html">Login</a>
                     </div>
                 </form>
 
                 <div class="signup-link">
-                    Already have an account? <a href="login.html">Login</a>
+                    Don't have an account? <a href="signup.html">Sign Up</a>
                 </div>
             </div>
         </div>
