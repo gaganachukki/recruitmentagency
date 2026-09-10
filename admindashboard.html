@@ -12,8 +12,9 @@
     <!-- Sidebar -->
     <aside class="sidebar">
         <div class="sidebar-header">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--primary-hover)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-            <div class="logo-text">STACKLY</div>
+            <a href="index.html">
+                <img src="assets/logo.webp" alt="STACKLY Logo" style="height: 32px; width: auto; display: block;">
+            </a>
         </div>
 
         <div class="user-profile-sm">
@@ -66,7 +67,6 @@
                 <button class="dash-hamburger">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
                 </button>
-                <h2>Admin Dashboard</h2>
             </div>
             <div class="header-actions">
                 <button class="notification-btn">
@@ -158,17 +158,21 @@
                         </div>
                     </div>
 
-                    <div class="stat-card gsap-stagger-item">
-                        <div class="stat-header">
-                            <div class="stat-icon" style="background: rgba(236, 72, 153, 0.1); color: #EC4899;">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-                            </div>
-                            Placement Revenue
+
+                </div>
+
+                <!-- Charts Grid -->
+                <div class="charts-grid gsap-fade-up" style="display: grid; grid-template-columns: 2fr 1fr; gap: 24px; margin-top: 24px;">
+                    <div class="chart-card" style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 16px; padding: 24px; box-shadow: 0 4px 6px rgba(0,0,0,0.02);">
+                        <h3 style="margin-bottom: 20px; color: var(--secondary); font-size: 1.1rem;">Placements (Last 6 Months)</h3>
+                        <div style="position: relative; height: 300px; width: 100%;">
+                            <canvas id="adminBarChart"></canvas>
                         </div>
-                        <div class="stat-value">$124,580</div>
-                        <div class="stat-trend trend-up">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"></polyline></svg>
-                            20.4% <span class="trend-text">vs last month</span>
+                    </div>
+                    <div class="chart-card" style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 16px; padding: 24px; box-shadow: 0 4px 6px rgba(0,0,0,0.02); overflow: hidden;">
+                        <h3 style="margin-bottom: 20px; color: var(--secondary); font-size: 1.1rem;">Candidate Pipeline</h3>
+                        <div style="position: relative; height: 220px; width: 100%; max-width: 280px; margin: 0 auto;">
+                            <canvas id="adminPieChart"></canvas>
                         </div>
                     </div>
                 </div>
@@ -454,7 +458,7 @@
                 
                 <div class="settings-panel" style="background: rgba(16, 185, 129, 0.05); border-color: rgba(16, 185, 129, 0.2); margin-bottom: 24px;">
                     <h3 style="color: var(--secondary); margin-bottom: 10px;">Total Monthly Revenue</h3>
-                    <h1 style="font-size: 3rem; color: #10B981;">$124,580.00</h1>
+                    <h1 style="font-size: clamp(2rem, 8vw, 3rem); color: #10B981;">$124,580.00</h1>
                     <p style="color: var(--text-muted);">+20.4% from previous month</p>
                 </div>
 
@@ -589,7 +593,7 @@
     </main>
 
     <!-- GSAP Animations -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script>
         gsap.fromTo('.gsap-fade-up', 
             { autoAlpha: 0, y: 30 },
@@ -627,6 +631,126 @@
                 sidebar.classList.toggle('active');
             });
         }
+
+        // Setup Admin Profile from localStorage
+        const userEmail = localStorage.getItem('userEmail');
+        if (userEmail) {
+            const userName = userEmail.split('@')[0];
+            const capitalizedName = userName.charAt(0).toUpperCase() + userName.slice(1);
+            const initial = userName.charAt(0).toUpperCase();
+
+            document.querySelectorAll('.avatar').forEach(el => el.innerText = initial);
+            
+            const userInfoH4 = document.querySelector('.user-info h4');
+            if(userInfoH4) {
+                const svgBadge = userInfoH4.innerHTML.match(/<svg.*<\/svg>/);
+                userInfoH4.innerHTML = capitalizedName + (svgBadge ? ' ' + svgBadge[0] : '');
+            }
+            
+            const userInfoP = document.querySelector('.user-info p');
+            if(userInfoP) userInfoP.innerText = userEmail;
+
+            const welcomeStrong = document.querySelector('#view-dashboard p strong');
+            if(welcomeStrong) welcomeStrong.innerText = capitalizedName + '!';
+
+            const profileEmail = document.querySelector('#view-profile input[type="email"]');
+            if (profileEmail) profileEmail.value = userEmail;
+            
+            const profileInputs = document.querySelectorAll('#view-profile input[type="text"]');
+            if (profileInputs.length >= 2) {
+                profileInputs[0].value = capitalizedName;
+                profileInputs[1].value = '';
+            }
+        }
+    </script>
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Bar Chart - Placements over 6 months
+            const barCtx = document.getElementById('adminBarChart').getContext('2d');
+            const gradient = barCtx.createLinearGradient(0, 0, 0, 400);
+            gradient.addColorStop(0, '#10B981');
+            gradient.addColorStop(1, '#34D399');
+
+            new Chart(barCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                    datasets: [{
+                        label: 'Placements',
+                        data: [42, 58, 35, 72, 65, 88],
+                        backgroundColor: gradient,
+                        borderRadius: 6,
+                        borderSkipped: false,
+                        barThickness: 24
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    animation: { duration: 2000, easing: 'easeOutQuart' },
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            backgroundColor: '#110B3A',
+                            padding: 12,
+                            titleFont: { family: 'Inter', size: 13 },
+                            bodyFont: { family: 'Inter', size: 14, weight: 'bold' },
+                            displayColors: false,
+                            cornerRadius: 8
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            grid: { color: 'rgba(0,0,0,0.04)', drawBorder: false },
+                            ticks: { font: { family: 'Inter' }, color: '#646464' }
+                        },
+                        x: {
+                            grid: { display: false, drawBorder: false },
+                            ticks: { font: { family: 'Inter' }, color: '#646464' }
+                        }
+                    }
+                }
+            });
+
+            // Pie Chart - Candidate Pipeline
+            const pieCtx = document.getElementById('adminPieChart').getContext('2d');
+            new Chart(pieCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Active', 'In Review', 'Placed', 'Inactive'],
+                    datasets: [{
+                        data: [45, 25, 20, 10],
+                        backgroundColor: ['#4F38DF', '#3B82F6', '#10B981', '#EF4444'],
+                        borderWidth: 0,
+                        hoverOffset: 8
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    cutout: '70%',
+                    animation: { animateScale: true, animateRotate: true, duration: 2500, easing: 'easeOutCirc' },
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: { padding: 20, usePointStyle: true, pointStyle: 'circle', font: { family: 'Inter', size: 12 }, color: '#646464' }
+                        },
+                        tooltip: {
+                            backgroundColor: '#110B3A',
+                            padding: 12,
+                            titleFont: { family: 'Inter', size: 13 },
+                            bodyFont: { family: 'Inter', size: 14, weight: 'bold' },
+                            displayColors: true,
+                            cornerRadius: 8
+                        }
+                    }
+                }
+            });
+        });
     </script>
 </body>
 </html>

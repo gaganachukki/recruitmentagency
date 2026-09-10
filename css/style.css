@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600;700;800&display=swap');
+@import url('assets/ext_d386ec6b.jpg');
 
 :root {
   /* Colors */
@@ -13,7 +13,7 @@
   --text-main: #1A1A1A;
   --text-muted: #646464;
   --border-color: #EAEAEA;
-  --success: #10B981;
+  --success: var(--primary);
   --white: #FFFFFF;
 
   /* Typography */
@@ -267,7 +267,7 @@ img {
 }
 
 /* Media Queries */
-
+@media (max-width: 992px) {
   .grid-cols-3 { grid-template-columns: repeat(2, 1fr); }
 }
 
@@ -363,7 +363,7 @@ img {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(250, 250, 251, 0.4); /* Reduced opacity for better image visibility */
+  background: rgba(250, 250, 251, 0.85); /* Increased opacity for better text readability */
   z-index: -1;
 }
 .hero h1 { margin: 16px 0 24px; }
@@ -637,12 +637,11 @@ img {
   justify-content: center;
   color: #fff;
   transition: all 0.3s;
+}
 .scroll-top-btn:hover {
   background-color: #0d9668;
 }
 
-
-}
 @media (max-width: 768px) {
   .footer-grid {
     grid-template-columns: 1fr;
@@ -651,9 +650,6 @@ img {
     position: static;
     transform: none;
     margin-top: 16px;
-    display: inline-flex;
-  }
-}
     display: inline-flex;
   }
 }
@@ -820,7 +816,6 @@ img {
 .bg-light { background-color: #f1f5f9; } /* Slightly different gray for alternating sections */
 
 
-}
 
 /* ==========================================================================
    Responsive Design - Mobile & Tablet
@@ -1340,4 +1335,180 @@ img, video, canvas, svg {
     overflow-wrap: break-word !important;
     white-space: normal !important;
   }
+}
+
+/* =========================================================
+   GLOBAL GRID & CARD ALIGNMENT FIX 
+   Eliminates uneven white space and forces all cards 
+   to be perfectly identical in height across all pages.
+========================================================= */
+
+/* Ensure grid items stretch to match the tallest item in the row */
+.grid {
+    align-items: stretch !important;
+}
+
+/* Force every card to be a flex container that fills the height */
+.card {
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100% !important;
+    justify-content: flex-start !important;
+}
+
+/* Force all images inside cards to be the exact same height */
+.card-img-wrapper {
+    width: 100% !important;
+    height: 220px !important;
+    min-height: 220px !important;
+    max-height: 220px !important;
+    overflow: hidden !important;
+    flex-shrink: 0 !important;
+    border-radius: 12px 12px 0 0 !important;
+}
+
+.card-img-wrapper img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: top center !important; /* Focuses on faces/top of image */
+}
+
+/* The text body stretches to fill the rest of the card */
+.card-body {
+    flex: 1 1 auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    padding: 25px !important;
+}
+
+/* Force the "Read More" or "Apply" button to stick perfectly to the bottom */
+.card-body > a:last-child,
+.card-body > button:last-child {
+    margin-top: auto !important;
+}
+
+/* Fix Hero overlapping - ensure the page header clears the fixed navbar */
+.page-header {
+    padding-top: 130px !important;
+    padding-bottom: 60px !important;
+}
+
+/* Fix blog cards pushing right on mobile */
+@media (max-width: 768px) {
+    .container[style*="grid-template-columns"] {
+        grid-template-columns: 1fr !important;
+        justify-content: center !important;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+    .blog-card {
+        margin: 0 auto !important;
+        width: 100% !important;
+        max-width: 350px !important;
+    }
+}
+
+/* Fix blog category filter buttons overflowing on mobile */
+@media (max-width: 768px) {
+    .bg-light .flex.flex-wrap {
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        padding: 0 10px !important;
+        gap: 10px !important;
+        justify-content: center !important;
+    }
+    .bg-light .btn-outline {
+        padding: 8px 15px !important; /* Slightly smaller padding to fit better */
+        font-size: 14px !important;
+        white-space: nowrap !important;
+        margin: 5px 2px !important;
+    }
+}
+
+
+/* Stack newsletter form vertically on mobile */
+@media (max-width: 768px) {
+    .bg-light form.flex {
+        flex-direction: column !important;
+        width: 100% !important;
+    }
+    .bg-light form.flex input,
+    .bg-light form.flex button {
+        width: 100% !important;
+        margin-bottom: 10px !important;
+    }
+}
+
+/* Fix massive hero text wrapping awkwardly on mobile */
+@media (max-width: 768px) {
+    .page-header h1 {
+        font-size: 2.5rem !important;
+        line-height: 1.2 !important;
+    }
+}
+
+/* Fix About page Community Initiative stats cutoff on mobile */
+@media (max-width: 768px) {
+    div[style*="grid-template-columns: 1fr 1fr;"] {
+        grid-template-columns: 1fr !important;
+    }
+    div[style*="grid-column: span 2;"] {
+        grid-column: span 1 !important;
+    }
+}
+
+/* Fix fake file input overflow on jobs page mobile */
+@media (max-width: 768px) {
+    .bg-primary .flex.justify-center a[style*="min-width: 250px"] {
+        min-width: 0 !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+    .bg-primary .flex.justify-center a[style*="min-width: 250px"] span {
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+    }
+}
+
+/* Stack jobs page upload buttons vertically on mobile */
+@media (max-width: 768px) {
+    .bg-primary .flex.justify-center[style*="max-width: 500px"] {
+        flex-direction: column !important;
+        width: 100% !important;
+    }
+    .bg-primary .flex.justify-center[style*="max-width: 500px"] > a {
+        width: 100% !important;
+        min-width: 0 !important;
+        box-sizing: border-box !important;
+    }
+    .bg-primary .flex.justify-center[style*="max-width: 500px"] > a span {
+        white-space: normal !important;
+        overflow: visible !important;
+    }
+}
+
+/* Fix Case Study card text merging with edges on mobile */
+@media (max-width: 768px) {
+    .parallax-container[style*="height: 350px"] {
+        height: auto !important;
+        min-height: 350px !important;
+    }
+    .parallax-container[style*="height: 350px"] > div.gsap-fade-up {
+        padding: 40px 20px !important;
+        box-sizing: border-box !important;
+        width: 100% !important;
+    }
+}
+
+/* Fix excessive padding on featured blog post text for mobile */
+@media (max-width: 768px) {
+    .card .grid div[style*="padding: 60px 50px"] {
+        padding: 30px 15px !important;
+    }
+    /* If the grid doesn't stack natively on mobile, force it to stack so the image and text have enough room */
+    .card .grid.grid-cols-2 {
+        grid-template-columns: 1fr !important;
+    }
 }

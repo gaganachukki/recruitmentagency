@@ -3,18 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - STACKLY</title>
+    <title>STACKLY - Recruitment Agency Portal</title>
+    <meta name="description" content="Connecting talented professionals with companies where they can grow, contribute, and succeed.">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    
     <!-- Navbar -->
     <nav class="navbar">
         <div class="container nav-container">
             <a href="index.html" class="logo">
                 <img src="assets/logo.webp" alt="STACKLY Logo" style="height: 40px; width: auto;">
             </a>
-            
             <div class="nav-links">
                 <a href="index.html" class="nav-link">Home</a>
                 <a href="about.html" class="nav-link">About</a>
@@ -23,11 +22,9 @@
                 <a href="blog.html" class="nav-link">Blog</a>
                 <a href="contact.html" class="nav-link active">Contact</a>
             </div>
-            
             <div class="nav-actions">
                 <a href="login.html" class="btn btn-outline">Login</a>
             </div>
-            
             <div class="hamburger">
                 <span></span>
                 <span></span>
@@ -36,160 +33,190 @@
         </div>
     </nav>
 
-    <header class="page-header bg-contact">
-        <div class="container animate-on-scroll">
-            <h1>Contact STACKLY</h1>
-            <p>Let's talk about your hiring or career goals.</p>
+    <!-- Page Header -->
+    <section class="section page-header" style="padding: 160px 0 100px; text-align: center; background: linear-gradient(rgba(17, 11, 58, 0.85), rgba(17, 11, 58, 0.85)), url('assets/hero.webp') center/cover no-repeat; color: white;">
+        <div class="container">
+            <h1 style="color: #ffffff !important; margin-bottom: 20px; text-shadow: 0 4px 6px rgba(0,0,0,0.3);">Contact STACKLY</h1>
+            <p style="font-size: 1.25rem; opacity: 0.9; max-width: 700px; margin: 0 auto; color: #ffffff !important;">Let's talk about your hiring or career goals.</p>
         </div>
-    </header>
+    </section>
 
-    <section class="section bg-white">
-        <div class="container grid grid-cols-2 gap-8">
-            <div class="animate-on-scroll">
-                <h2>Get in Touch</h2>
-                <div class="mt-4"><p><strong>Phone:</strong> +1 (555) 123-4567</p><p><strong>Email:</strong> contact@stackly.com</p></div>
+    <!-- Main Contact Grid -->
+    <section class="section">
+        <div class="container grid grid-cols-2 gap-8" style="align-items: flex-start !important;">
+            
+            <!-- Left Column: Contact Info -->
+            <div style="display: flex; flex-direction: column; gap: 20px; height: 100%; justify-content: center;">
+                <div style="margin-bottom: 10px;">
+                    <h2 style="color: var(--secondary); margin-bottom: 10px; font-family: 'Outfit', sans-serif;">Get in Touch</h2>
+                    <p class="text-muted" style="font-size: 0.95rem;">Our recruitment specialists are available during business hours to assist you.</p>
+                </div>
                 
-                <h3 class="mt-6 mb-3">FAQ</h3>
-                <div class="faq-list">
-                    <div class="faq-item">
-                        <div class="faq-header"><h4>How do I apply?</h4><span class="faq-icon">▼</span></div>
-                        <div class="faq-content"><p>You can apply directly via the Jobs page.</p></div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <div class="card" style="text-align: center; padding: 25px 15px; display: flex; flex-direction: column; justify-content: center;">
+                        <div class="icon-box" style="margin: 0 auto 10px; width: 40px; height: 40px; min-width: 40px;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                        </div>
+                        <h3 style="color: var(--secondary); margin-bottom: 5px; font-size: 1.1rem;">HQ Address</h3>
+                        <p class="text-muted" style="font-size: 0.85rem; line-height: 1.4;">Omalur Main Road<br>Salem, TN 636004</p>
+                        <p class="text-primary" style="font-weight: 600; font-size: 0.9rem; margin-top: 10px;">+91 427 233 4455</p>
                     </div>
+
+                    <div class="card" style="text-align: center; padding: 25px 15px; display: flex; flex-direction: column; justify-content: center;">
+                        <div class="icon-box" style="margin: 0 auto 10px; width: 40px; height: 40px; min-width: 40px;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                        </div>
+                        <h3 style="color: var(--secondary); margin-bottom: 5px; font-size: 1.1rem;">Business Hours</h3>
+                        <p class="text-muted" style="font-size: 0.85rem; line-height: 1.4;">Mon - Fri<br>9:00 AM - 6:00 PM</p>
+                        <p class="text-primary" style="font-weight: 600; font-size: 0.9rem; margin-top: 10px;">support@stackly.com</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Form -->
+            <div>
+                <div class="card p-8" style="height: 100%; display: flex; flex-direction: column; justify-content: center;">
+                    <h3 style="color: var(--secondary); margin-bottom: 25px; font-family: 'Outfit', sans-serif;">Send us a Message</h3>
+                    <form action="404.html" style="display: flex; flex-direction: column; gap: 20px;">
+                        <div>
+                            <input type="text" class="form-control" placeholder="Full Name" required style="width: 100%; padding: 15px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-color);">
+                        </div>
+                        <div>
+                            <input type="email" class="form-control" placeholder="Email Address" required style="width: 100%; padding: 15px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-color);">
+                        </div>
+                        <div>
+                            <select class="form-control" style="width: 100%; padding: 15px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-color); color: var(--text-muted);">
+                                <option>I'm looking to hire talent</option>
+                                <option>I'm looking for a job</option>
+                                <option>General Inquiry</option>
+                            </select>
+                        </div>
+                        <div>
+                            <textarea class="form-control" placeholder="Message" rows="5" required style="width: 100%; padding: 15px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-color); resize: vertical;"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="text-align: center; width: 100%; padding: 15px; font-weight: 600;">Send Message</button>
+                    </form>
                 </div>
             </div>
             
-            <div class="card shadow-md animate-on-scroll">
-                <h3>Send a Message</h3>
-                <form class="mt-4">
-                    <div class="form-group"><input type="text" class="form-control" placeholder="Full Name" required></div>
-                    <div class="form-group"><input type="email" class="form-control" placeholder="Email Address" required></div>
-                    <div class="form-group">
-                        <select class="form-control">
-                            <option>I'm Interested In</option>
-                            <option>Finding a Job</option>
-                            <option>Hiring Talent</option>
-                        </select>
-                    </div>
-                    <div class="form-group"><textarea class="form-control" rows="4" placeholder="Message" required></textarea></div>
-                    <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
-                    <p class="success-msg text-success mt-2 text-center" style="display:none; font-weight: 600;">Thank you! Your inquiry has been submitted successfully.</p>
-                </form>
-            </div>
         </div>
     </section>
 
-
-    <!-- 1. Global Offices -->
-    <section class="section bg-light">
-        <div class="container">
-            <div class="section-header text-center gsap-fade-up">
-                <span class="badge">Locations</span>
-                <h2>Our Global Offices</h2>
-            </div>
-            <div class="grid grid-cols-3 gap-4 mt-6 gsap-stagger-container">
-                <div class="office-card card shadow-sm gsap-stagger-item">
-                    <h3>Salem (HQ)</h3>
-                    <p class="mt-2 text-sm">Omalur Main Road, Meyyanur<br>Salem, Tamil Nadu 636004</p>
-                    <p class="mt-2 text-sm text-primary">+91 427 233 4455</p>
-                </div>
-                <div class="office-card card shadow-sm gsap-stagger-item">
-                    <h3>Bangalore</h3>
-                    <p class="mt-2 text-sm">100 Feet Road, Indiranagar<br>Bangalore, Karnataka 560038</p>
-                    <p class="mt-2 text-sm text-primary">+91 80 4567 8900</p>
-                </div>
-                <div class="office-card card shadow-sm gsap-stagger-item">
-                    <h3>Hyderabad</h3>
-                    <p class="mt-2 text-sm">Cyber Towers, HITEC City<br>Hyderabad, Telangana 500081</p>
-                    <p class="mt-2 text-sm text-primary">+91 40 2345 6789</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 2. Parallax Map/Office View -->
-    <section class="section pt-0 pb-0">
-        <div class="container">
-            <div class="parallax-container" style="height: 400px; display:flex; align-items:center; justify-content:center; background:#110B3A;">
-                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=80" alt="Office Building" class="parallax-img gsap-parallax-img" style="opacity: 0.5; position:absolute; inset:0;">
-                <div style="position:relative; z-index:2; text-align:center; color:white;" class="gsap-fade-up">
-                    <h2 class="text-white">Connecting Talent Worldwide</h2>
-                    <p class="mt-2 text-accent" style="max-width: 600px; margin:0 auto;">No matter where you are, our global network is ready to assist you in reaching your goals.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 3. Department Contacts -->
-    <section class="section">
-        <div class="container">
-            <div class="section-header text-center gsap-fade-up">
-                <span class="badge">Direct Lines</span>
-                <h2>Reach the Right Team</h2>
-            </div>
-            <div class="grid grid-cols-3 gap-4 mt-6 text-center gsap-stagger-container">
-                <div class="gsap-stagger-item">
-                    <div class="icon-wrapper mx-auto mb-3" style="margin: 0 auto 16px;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></div>
-                    <h4>Recruitment</h4>
-                    <p class="text-sm">hire@stackly.com</p>
-                </div>
-                <div class="gsap-stagger-item">
-                    <div class="icon-wrapper mx-auto mb-3" style="margin: 0 auto 16px;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></div>
-                    <h4>Media & Press</h4>
-                    <p class="text-sm">pr@stackly.com</p>
-                </div>
-                <div class="gsap-stagger-item">
-                    <div class="icon-wrapper mx-auto mb-3" style="margin: 0 auto 16px;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg></div>
-                    <h4>General Support</h4>
-                    <p class="text-sm">help@stackly.com</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 4. Support Center & Helpdesk -->
-    <section class="section bg-light">
+    
+    <!-- Need Immediate Answers Section -->
+    <section class="section" style="padding: 80px 0; background-color: var(--bg-light);">
         <div class="container grid grid-cols-2 gap-8 items-center">
-            <div class="gsap-fade-up">
-                <h2>Need Immediate Answers?</h2>
-                <p class="mt-4">Our comprehensive Support Center covers everything from interview preparation to understanding our billing cycles. You can also submit a ticket directly to our helpdesk team.</p>
-                <a href="404.html" class="btn btn-outline mt-6">Visit Helpdesk</a>
+            <div style="display: flex; flex-direction: column; justify-content: center; height: 100%;">
+                <h2 style="font-family: 'Outfit', sans-serif; font-size: 3rem; color: var(--secondary); margin-bottom: 25px; line-height: 1.1;">Need Immediate<br>Answers?</h2>
+                <p class="text-muted" style="margin-bottom: 30px; line-height: 1.6; font-size: 1.05rem;">Our comprehensive Support Center covers everything from interview preparation to understanding our billing cycles. You can also submit a ticket directly to our helpdesk team.</p>
+                <a href="404.html" class="btn" style="background: transparent; color: var(--primary); border: 1px solid var(--border-color); border-radius: 30px; padding: 12px 30px; font-weight: 600; display: inline-block;">Visit Helpdesk</a>
             </div>
-            <div class="gsap-fade-up">
-                <img src="https://images.unsplash.com/photo-1552581234-26160f608093?w=600&q=80" alt="Support Team" class="rounded-image shadow-lg">
-            </div>
-        </div>
-    </section>
-
-    <!-- 5. Social Media & Live Chat Promo -->
-    <section class="section">
-        <div class="container text-center gsap-fade-up">
-            <span class="badge">Stay Connected</span>
-            <h2>Let's Chat</h2>
-            <p class="mt-4" style="max-width:600px; margin: 16px auto;">We're online 24/7. Use the chat bubble in the bottom right corner of the screen to speak with a representative instantly, or follow our socials for daily updates.</p>
-            <div class="flex justify-center gap-4 mt-6">
-                <a href="404.html" class="btn btn-primary">Start Live Chat</a>
-                <a href="404.html" class="btn btn-outline">Follow on LinkedIn</a>
+            <div style="border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); height: 350px;">
+                <img src="assets/hero.webp" alt="Helpdesk Team" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
         </div>
     </section>
 
+    <!-- Connecting Talent Banner -->
+    <section class="section" style="padding: 0 20px;">
+        <div class="container" style="background: linear-gradient(rgba(17, 11, 58, 0.7), rgba(17, 11, 58, 0.7)), url('assets/hero.webp') center/cover; padding: 100px 20px; text-align: center; color: white; border-radius: 20px; margin: 40px auto; display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 400px;">
+            <h2 style="font-family: 'Outfit', sans-serif; font-size: 3.5rem; font-weight: 800; margin-bottom: 15px; color: #ffffff !important;">Connecting Talent Worldwide</h2>
+            <p style="font-size: 1.1rem; opacity: 0.9; max-width: 600px; margin: 0 auto; color: #ffffff !important; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">No matter where you are, our global network is ready to assist you in reaching your goals.</p>
+        </div>
+    </section>
 
-    <!-- Google Map Location -->
-    <section class="section bg-white">
+<!-- Global Offices Section -->
+    <section class="section bg-light">
         <div class="container">
-            <div class="section-header text-center gsap-fade-up">
-                <span class="badge">Visit Us</span>
-                <h2>Our Headquarters in Salem</h2>
-                <p>Drop by our main office in Salem for a coffee and a chat about your future. We'd love to meet you in person.</p>
+            <div style="text-align: center; margin-bottom: 50px;">
+                <h2 style="color: var(--secondary); font-size: 2.5rem; font-family: 'Outfit', sans-serif;">Our Global Offices</h2>
+                <p class="text-muted">Find a Stackly recruitment hub near you.</p>
             </div>
-            <div class="mt-8 gsap-fade-up" style="border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-md); height: 450px; background: #eee;">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125026.15570265269!2d78.07721831885542!3d11.653735165181788!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3babf1cc752495bb%3A0xc00570b54019a86b!2sSalem%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1714578160000!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div class="grid grid-cols-3 gap-8">
+                <!-- Salem HQ -->
+                <div class="card p-8 hover-card">
+                    <h3 style="color: var(--secondary); margin-bottom: 15px; font-size: 1.5rem;">Salem (HQ)</h3>
+                    <p class="text-muted" style="margin-bottom: 20px;">Omalur Main Road, Meyyanur<br>Salem, Tamil Nadu 636004</p>
+                    <a href="404.html" class="text-primary" style="font-weight: 600; text-decoration: none;">+91 427 233 4455</a>
+                </div>
+                <!-- Bangalore -->
+                <div class="card p-8 hover-card">
+                    <h3 style="color: var(--secondary); margin-bottom: 15px; font-size: 1.5rem;">Bangalore</h3>
+                    <p class="text-muted" style="margin-bottom: 20px;">100 Feet Road, Indiranagar<br>Bangalore, Karnataka 560038</p>
+                    <a href="404.html" class="text-primary" style="font-weight: 600; text-decoration: none;">+91 80 4567 8900</a>
+                </div>
+                <!-- Hyderabad -->
+                <div class="card p-8 hover-card">
+                    <h3 style="color: var(--secondary); margin-bottom: 15px; font-size: 1.5rem;">Hyderabad</h3>
+                    <p class="text-muted" style="margin-bottom: 20px;">Cyber Towers, HITEC City<br>Hyderabad, Telangana 500081</p>
+                    <a href="404.html" class="text-primary" style="font-weight: 600; text-decoration: none;">+91 40 2345 6789</a>
+                </div>
             </div>
         </div>
     </section>
 
-        <!-- Footer -->
-    <footer class="footer bg-secondary text-white pt-8 pb-4">
+    <!-- Map Section -->
+    <section style="width: 100%; height: 450px; background: #e5e7eb;">
+        <!-- Embedded Google Map of Salem, Tamil Nadu -->
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125052.75330368383!2d78.0770932402157!3d11.653723326177114!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3babf1ccf52cba0b%3A0xee9989007068ca47!2sSalem%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+
+    <!-- Dedicated FAQ Section -->
+    <section class="section" style="padding: 80px 0;">
+        <div class="container" style="max-width: 800px; margin: 0 auto;">
+            <div style="text-align: center; margin-bottom: 50px;">
+                <h2 style="color: var(--secondary); font-size: 2.5rem; font-family: 'Outfit', sans-serif; margin-bottom: 15px;">Frequently Asked Questions</h2>
+                <p class="text-muted">Everything you need to know about partnering with Stackly.</p>
+            </div>
+            
+            <div style="display: flex; flex-direction: column; gap: 15px;">
+                <div class="faq-item">
+                    <div class="faq-header">
+                        <h4 style="color: var(--secondary);">How do I apply?</h4>
+                        <span class="faq-icon" style="font-size: 1.2rem;">&#9660;</span>
+                    </div>
+                    <div class="faq-content">
+                        <p>You can apply directly through our Jobs page by uploading your resume, or you can send us a message through the contact form above to get in touch with a recruiter.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-header">
+                        <h4 style="color: var(--secondary);">What industries do you specialize in?</h4>
+                        <span class="faq-icon" style="font-size: 1.2rem;">&#9660;</span>
+                    </div>
+                    <div class="faq-content">
+                        <p>We primarily specialize in Technology, Healthcare, Finance, and Executive Search, matching top-tier professionals with leading companies worldwide.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-header">
+                        <h4 style="color: var(--secondary);">How long does the hiring process take?</h4>
+                        <span class="faq-icon" style="font-size: 1.2rem;">&#9660;</span>
+                    </div>
+                    <div class="faq-content">
+                        <p>The timeline varies depending on the role and company, but our average placement cycle from initial interview to signed offer is 2-4 weeks.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-header">
+                        <h4 style="color: var(--secondary);">Is there a fee for job seekers?</h4>
+                        <span class="faq-icon" style="font-size: 1.2rem;">&#9660;</span>
+                    </div>
+                    <div class="faq-content">
+                        <p>Absolutely not. Our services are 100% free for candidates. We are compensated entirely by our partner companies when a successful placement is made.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<footer class="footer bg-secondary text-white pt-8 pb-4">
         <div class="container">
             <div class="footer-grid mb-8">
                 <!-- Column 1 -->

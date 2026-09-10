@@ -5,7 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog & Insights - STACKLY</title>
     <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        /* Force Blog Hero Text to Standard Size */
+        .page-header h1 {
+            font-size: 3rem !important;
+            line-height: 1.2 !important;
+        }
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2rem !important;
+            }
+        }
+    </style>
 </head>
+
 <body>
     
     <!-- Navbar -->
@@ -43,10 +57,18 @@
     </header>
 
     <section class="section">
-        <div class="container grid grid-cols-3 gap-3">
+        <div class="container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px;">
             <div class="blog-card animate-on-scroll">
                 <div class="blog-img"><img src="assets/hiring.webp" alt="Hiring" class="rounded-image"><span class="blog-tag bg-white text-primary">Hiring</span></div>
                 <div class="blog-content"><h4>5 Strategies to Attract Top Talent</h4><p>Position your company to attract the best candidates.</p><a href="blog.html" class="read-more text-primary mt-2">Read More</a></div>
+            </div>
+            <div class="blog-card animate-on-scroll">
+                <div class="blog-img"><img src="assets/career.webp" alt="Career" class="rounded-image"><span class="blog-tag bg-white text-primary">Career</span></div>
+                <div class="blog-content"><h4>Navigating the Modern Job Market</h4><p>Tips for standing out in today's competitive landscape.</p><a href="blog.html" class="read-more text-primary mt-2">Read More</a></div>
+            </div>
+            <div class="blog-card animate-on-scroll">
+                <div class="blog-img"><img src="assets/recruitment-team.webp" alt="Culture" class="rounded-image"><span class="blog-tag bg-white text-primary">Culture</span></div>
+                <div class="blog-content"><h4>Building a Thriving Company Culture</h4><p>Learn how to foster an environment where employees excel.</p><a href="blog.html" class="read-more text-primary mt-2">Read More</a></div>
             </div>
         </div>
     </section>
@@ -55,7 +77,7 @@
     <section class="section bg-accent text-center">
         <div class="container">
             <h2>Stay Ahead of Your Career</h2>
-            <form class="search-bar mt-4" style="max-width: 500px; margin: 30px auto 0;" id="newsletterForm">
+            <form action="404.html" class="search-bar mt-4" style="max-width: 500px; margin: 30px auto 0;" id="newsletterForm">
                 <input type="email" class="search-input" placeholder="Enter your email" required>
                 <button type="submit" class="btn btn-primary">Subscribe</button>
             </form>
@@ -70,9 +92,9 @@
             <div class="card p-0 overflow-hidden shadow-md gsap-fade-up">
                 <div class="grid grid-cols-2 items-center">
                     <div>
-                        <img src="https://images.unsplash.com/photo-1552581234-26160f608093?w=800&q=80" alt="Featured" style="height:100%; object-fit:cover;">
+                        <img src="assets/featured.webp" alt="Featured" style="height:100%; object-fit:cover;">
                     </div>
-                    <div class="p-8">
+                    <div style="padding: 60px 50px; display: flex; flex-direction: column; justify-content: center;">
                         <span class="badge">Featured</span>
                         <h2 class="mt-2">The Future of Remote Work in 2027</h2>
                         <p class="mt-4">Explore the shifting dynamics of distributed teams and how companies are adapting to a truly borderless workforce.</p>
@@ -86,7 +108,7 @@
     <!-- 2. Blog Categories -->
     <section class="section bg-light pt-4 pb-4">
         <div class="container text-center gsap-fade-up">
-            <div class="flex justify-center gap-2 flex-wrap">
+            <div style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; padding: 0 15px;">
                 <a href="404.html" class="btn btn-outline" style="background:var(--white);">All Posts</a>
                 <a href="404.html" class="btn btn-outline">Career Advice</a>
                 <a href="404.html" class="btn btn-outline">Hiring Trends</a>
@@ -100,7 +122,7 @@
     <section class="section pt-0 pb-0 mt-8">
         <div class="container">
             <div class="parallax-container" style="height: 300px; display:flex; align-items:center; justify-content:center; background:var(--primary);">
-                <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1200&q=80" alt="Discussion" class="parallax-img gsap-parallax-img" style="opacity: 0.2; position:absolute; inset:0; mix-blend-mode: overlay;">
+                <img src="assets/discussion.webp" alt="Discussion" class="parallax-img gsap-parallax-img" style="opacity: 0.2; position:absolute; inset:0; mix-blend-mode: overlay;">
                 <div style="position:relative; z-index:2; text-align:center; color:white; padding: 0 20px;" class="gsap-fade-up">
                     <h2 class="text-white">"Knowledge shared is success multiplied."</h2>
                     <p class="mt-2 text-accent">Join our community of 50,000+ readers.</p>
@@ -116,24 +138,30 @@
                 <span class="badge">Writers</span>
                 <h2>Our Top Contributors</h2>
             </div>
-            <div class="grid grid-cols-3 gap-4 mt-6 gsap-stagger-container">
-                <div class="author-card card shadow-sm gsap-stagger-item">
-                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&q=80" alt="Author" style="width:80px; height:80px; border-radius:50%; margin:0 auto 16px;">
-                    <h4>Jessica Row</h4>
-                    <p class="text-primary text-sm font-semibold">HR Strategist</p>
-                    <p class="mt-2 text-sm">Expert in talent acquisition and corporate culture.</p>
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 40px;" class="gsap-stagger-container">
+                <div class="card text-center shadow-sm gsap-stagger-item" style="flex: 1 1 200px; max-width: 250px; padding: 40px 20px;">
+                    <img src="assets/author1.webp" alt="Author" style="width:80px; height:80px; border-radius:50%; margin:0 auto 16px; object-fit: cover;">
+                    <h4 style="margin: 0; font-size: 1.25rem;">Jessica Row</h4>
+                    <p class="text-primary text-sm font-semibold" style="margin-top: 5px;">HR Strategist</p>
+                    <p class="mt-3 text-sm text-muted">Expert in talent acquisition and corporate culture.</p>
                 </div>
-                <div class="author-card card shadow-sm gsap-stagger-item">
-                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&q=80" alt="Author" style="width:80px; height:80px; border-radius:50%; margin:0 auto 16px;">
-                    <h4>Michael Chen</h4>
-                    <p class="text-primary text-sm font-semibold">Tech Lead</p>
-                    <p class="mt-2 text-sm">Writing about engineering management and coding interviews.</p>
+                <div class="card text-center shadow-sm gsap-stagger-item" style="flex: 1 1 200px; max-width: 250px; padding: 40px 20px;">
+                    <img src="assets/author2.webp" alt="Author" style="width:80px; height:80px; border-radius:50%; margin:0 auto 16px; object-fit: cover;">
+                    <h4 style="margin: 0; font-size: 1.25rem;">Michael Chen</h4>
+                    <p class="text-primary text-sm font-semibold" style="margin-top: 5px;">Tech Lead</p>
+                    <p class="mt-3 text-sm text-muted">Writing about engineering management and coding interviews.</p>
                 </div>
-                <div class="author-card card shadow-sm gsap-stagger-item">
-                    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&q=80" alt="Author" style="width:80px; height:80px; border-radius:50%; margin:0 auto 16px;">
-                    <h4>Emma Watson</h4>
-                    <p class="text-primary text-sm font-semibold">Career Coach</p>
-                    <p class="mt-2 text-sm">Helping professionals level up their resumes and negotiate offers.</p>
+                <div class="card text-center shadow-sm gsap-stagger-item" style="flex: 1 1 200px; max-width: 250px; padding: 40px 20px;">
+                    <img src="assets/author3.webp" alt="Author" style="width:80px; height:80px; border-radius:50%; margin:0 auto 16px; object-fit: cover;">
+                    <h4 style="margin: 0; font-size: 1.25rem;">Emma Watson</h4>
+                    <p class="text-primary text-sm font-semibold" style="margin-top: 5px;">Career Coach</p>
+                    <p class="mt-3 text-sm text-muted">Helping professionals level up their resumes and negotiate offers.</p>
+                </div>
+                <div class="card text-center shadow-sm gsap-stagger-item" style="flex: 1 1 200px; max-width: 250px; padding: 40px 20px;">
+                    <img src="assets/ceo.webp" alt="Author" style="width:80px; height:80px; border-radius:50%; margin:0 auto 16px; object-fit: cover;">
+                    <h4 style="margin: 0; font-size: 1.25rem;">David Smith</h4>
+                    <p class="text-primary text-sm font-semibold" style="margin-top: 5px;">Senior Recruiter</p>
+                    <p class="mt-3 text-sm text-muted">Insights on hiring trends and market demands.</p>
                 </div>
             </div>
         </div>
@@ -144,8 +172,8 @@
         <div class="container text-center gsap-fade-up" style="max-width: 600px;">
             <h2>Never Miss an Update</h2>
             <p class="mt-2 mb-4">Get the latest insights delivered straight to your inbox every Tuesday.</p>
-            <form class="flex gap-2">
-                <input type="email" placeholder="Enter your email" class="form-control" style="flex:1;">
+            <form action="404.html" class="flex gap-2">
+                <input type="email" placeholder="Enter your email" class="form-control" style="flex:1;" required>
                 <button type="submit" class="btn btn-primary">Subscribe Now</button>
             </form>
         </div>

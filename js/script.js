@@ -117,34 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Form Validation (Basic Frontend)
-    const forms = document.querySelectorAll('form');
-    forms.forEach(form => {
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const btn = form.querySelector('button[type="submit"]');
-            const originalText = btn.innerHTML;
-            btn.innerHTML = 'Processing...';
-            btn.disabled = true;
-            
-            setTimeout(() => {
-                btn.innerHTML = 'Success!';
-                btn.classList.add('btn-success');
-                form.reset();
-                
-                // Show success message if present
-                const successMsg = form.parentElement.querySelector('.success-msg');
-                if (successMsg) successMsg.style.display = 'block';
-                
-                setTimeout(() => {
-                    btn.innerHTML = originalText;
-                    btn.classList.remove('btn-success');
-                    btn.disabled = false;
-                    if (successMsg) successMsg.style.display = 'none';
-                }, 3000);
-            }, 1500);
-        });
-    });
+
 
     // FAQ Accordion
     const faqItems = document.querySelectorAll('.faq-item');

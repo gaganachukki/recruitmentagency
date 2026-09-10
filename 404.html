@@ -3,34 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>STACKLY - Recruitment Agency Portal</title>
-    <meta name="description" content="Connecting talented professionals with companies where they can grow, contribute, and succeed.">
-    <link rel="stylesheet" href="css/style.css">
+    <meta name="color-scheme" content="light only">
+    <meta name="darkreader-lock">
+    <title>404 - Page Not Found | STACKLY</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@600;800&display=swap" rel="stylesheet">
+    <style>
+        /* Force reset and background */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        html, body {
+            width: 100%;
+            height: 100vh;
+            background-color: #ffffff !important;
+            color: #1a1a1a;
+            font-family: 'Inter', sans-serif;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .error-container {
+            text-align: center;
+            padding: 40px;
+            max-width: 650px;
+            background-color: #ffffff !important;
+        }
+        
+        h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: clamp(4rem, 20vw, 8rem);
+            font-weight: 800;
+            color: #4F38DF;
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+        
+        h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: clamp(1.8rem, 8vw, 2.5rem);
+            font-weight: 600;
+            color: #110B3A;
+            margin-bottom: 20px;
+        }
+        
+        p {
+            font-size: 1.1rem;
+            color: #646464;
+            line-height: 1.6;
+            margin-bottom: 40px;
+        }
+        
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+        
+        .btn-primary {
+            background-color: #4F38DF;
+            color: #ffffff;
+            border: 2px solid #4F38DF;
+        }
+        
+        .btn-primary:hover {
+            background-color: #3723AB;
+            border-color: #3723AB;
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            color: #4F38DF;
+            border: 2px solid #4F38DF;
+        }
+        
+        .btn-outline:hover {
+            background-color: #f5f3ff;
+        }
+    </style>
 </head>
 <body>
-    <!-- Navbar -->
-    
 
-    <!-- 404 Error Section -->
-    <section class="section page-header" style="height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; background-color: var(--bg-color); margin: 0; padding: 20px; text-align: center;">
-        <div class="container">
-            <h1 style="font-size: 8rem; font-weight: 800; color: var(--primary); line-height: 1; margin-bottom: 20px; font-family: 'Outfit', sans-serif;">404!</h1>
-            <h2 style="font-size: 2.5rem; color: var(--secondary); margin-bottom: 20px; font-family: 'Outfit', sans-serif;">Page Not Found</h2>
-            <p style="font-size: 1.1rem; color: var(--text-muted); max-width: 600px; margin: 0 auto 40px; line-height: 1.6;">
-                Oops! Looks like the page you are looking for has been relocated, deleted, or never existed in the first place. Let's get you back on track to finding elite talent or your next dream job.
-            </p>
-            <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
-                <a href="index.html" class="btn btn-primary" style="padding: 15px 30px; font-weight: 600;">Return to Homepage</a>
-                <a href="jobs.html" class="btn btn-outline" style="padding: 15px 30px; font-weight: 600;">Browse Open Jobs</a>
-            </div>
+    <div class="error-container">
+        <h1>404</h1>
+        <h2>Page Not Found</h2>
+        <p>Oops! The page you are looking for has been relocated, deleted, or never existed in the first place. Let's get you back on track to finding elite talent or your next dream job.</p>
+        
+        <div class="btn-group">
+            <a href="index.html" class="btn btn-primary">Return to Homepage</a>
+            <a href="jobs.html" class="btn btn-outline">Browse Open Jobs</a>
         </div>
-    </section>
+    </div>
 
-
-
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="js/script.js"></script>
 </body>
 </html>
