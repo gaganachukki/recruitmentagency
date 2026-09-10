@@ -123,6 +123,7 @@ img {
   border: none;
   outline: none;
   gap: 8px;
+  white-space: nowrap;
 }
 
 .btn-primary {
